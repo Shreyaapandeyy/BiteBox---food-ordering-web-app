@@ -1,3 +1,7 @@
+
+import React from 'react';
+import ReactDOM from 'react-dom';
+
 // const heading = React.createElement("h1",{id:"heading",xy:"abc"},"Hello world ");  // 3rd one -(hello world ) is basically children and it goes inside the h1 tag
 // // 2nd one - {id & and other things are the attributes }       both of the children and attributes are shown in the props in the broswer . props consist od=f children and attributes.
 
