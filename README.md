@@ -95,12 +95,51 @@ const [state, setState] = useState(initialState);
 
 # --render
 whenever a state variable changes react rerenders the components.
+- react render cycles are very fast.
+- react renders UI very fast .has the best render mechanism
+
+ 
 
 # react is good at DOM operations , DOM manipulations .
 
 
 
-- # useEffect()
+- # useEffect()- 
+- runs after the component is rendered used to make api calls and such function which needs to be done after rendring 
+
+useEffect(() => {
+    fetchData();
+   }, []);
+
+
+- calling fetchData() for api
+
+[]) - Dependency Array ([]): The empty array [] is the second argument to useEffect. This array determines when the effect should be re-run:
+
+- if no dependency array useeffect is called on every render.
+- If you pass an empty array, the effect runs only once, after the initial render.
+- If you include variables in this array, the effect will re-run whenever any of those variables change
+
+
+# confusiion about writing things inside return and outside return statement in functional component
+
+- inside the return Statement: The UI elements (JSX) that the component renders, including dynamic data, event handlers, and conditional rendering.
+
+- Outside the return Statement: All the logic that powers the component, including state management, side effects, helper functions, and event handlers.
+
+This separation keeps your component organized, ensuring that the logic is handled before rendering the UI, and the UI is cleanly defined within the return statement.
+
+
+# In the Search functionality -
+- we are using two state variable for , list of restraunts one is used to keep it intact for the filtering and calculating purpose and the other filteredrestruant is used to modify the changes and to render that changes.
+- jo bhi claculation and filter wala data listofrestraunts se utha rhe h fir usko filteredrestraunt m update krke render krdrhe h, agar same m krte to issue aata , baad m fiter nhi kr pate kyuki data modify hojata h , isliye ek ka use modify aur render krne k liye horha aur dushre ka use , data leke calculate aur filter krne k liye.
+
+
+# link in react router
+
+- we dont use anchor tag because it reloads the whole page wheras link only refreshes the component.
+
+
 
 
 

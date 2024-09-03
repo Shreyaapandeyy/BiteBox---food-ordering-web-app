@@ -3,8 +3,11 @@ import React from  "react";
 import ReactDOM from "react-dom/client";
 import Header from "./components/Header";
 import Body from "./components/Body";
- 
-
+import { createBrowserRouter,RouterProvider,Outlet} from "react-router-dom";
+import About from "./components/About";
+import Contact from "./components/Contact";
+import Error from "./components/error";
+import RestaurantMenu from "./components/RestaurantMenu";
 // const heading = React.createElement("h1",{id:"heading",xy:"abc"},"Hello world ");  // 3rd one -(hello world ) is basically children and it goes inside the h1 tag
 // // 2nd one - {id & and other things are the attributes }       both of the children and attributes are shown in the props in the broswer . props consist od=f children and attributes.
 // const root = ReactDOM.createRoot(document.getElementById("root"));
@@ -96,7 +99,7 @@ const heading = (
 
 
 
-//   // in arrow func these two are same 
+  // in arrow func these two are same 
 //   const fn = () => {
 //     return true;
 //   };
@@ -167,16 +170,42 @@ const Title = ()=>(
          return (
             <div className="app">
                <Header />
-               <Body />
+               <Outlet/>
             </div>
-         );
-
+         );      
  };
 
+const approuter = createBrowserRouter([
+   {
+      path: "/",
+      element: <AppLayout/>,
+      children:[
+         {
+          path: "/",
+          element: <Body/>,
 
+         },
+         {
+            path: "/about",       //if i am on /about path load about page.
+            element: <About/>,
+         },
+         {
+            path: "/contact",
+            element: <Contact/>,
+         },
+         {
+         path: "/restaurants/:resId",
+         element: <RestaurantMenu />,
+         },
+      
+      ],
+      errorElement: <Error/>,
+   },
+   
+]);
 
 const root = ReactDOM.createRoot(document.getElementById("root")); 
-  root.render( <AppLayout />  );
+  root.render( <RouterProvider router={approuter}/> );
 
 
 

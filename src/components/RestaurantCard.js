@@ -1,6 +1,7 @@
 import { CDN_URL } from "../utils/constants"; //named export is imported like this.
 
 
+
 const RestaurantCard = (props) => {
     const {resData} = props;
  
