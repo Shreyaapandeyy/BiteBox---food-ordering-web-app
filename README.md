@@ -142,7 +142,21 @@ This separation keeps your component organized, ensuring that the logic is handl
 
 
 
+# Custom Hooks - firstly finalize the contract ,what it is going to take input and what output is going to give.
+- it is just the utility function.
+- we should optimize the code more by removing the things which are not necessary to write in the specific compnonent like in the restaurantmenu comp we can remove the api fetching code by simpling making a custom hook and passing that custom hook there.
+- create custom hook in the utils folder ,
+-it makes testing process very easy . jab fetch wale code  m dikkat h to custom hook m jake check kr skte h , resmenu dikkat h to uske component m sirf uski info h to wha testing asaan ho jata h , ek hi component m kafi codeds rhete h to dikkat hota h bs .
 
+
+# Lazy loading - 
+- in the last part of the epi 9 we are handling lazy loading , which is a very important part of handling the apps having large scale of components . 
+- as we know parcel is a bundler which does a lot of job for us , one of the job is to bundle the large code files into one file , compressing all the files together.
+- in the large scale application this one file gets bigger which makes application slower, its fine for our app rn because it doesnt have that much of component and all stuff, but if suppose we have the section for grocery , which had their own alot of components for different things in the grcoery section , 
+- and similarly many other sections like a normal web app , we need to chunkinfy the app , we need to divide the app into smaller smaller chunks, 
+its also known as dynamic bundling ,code splitting ,
+in this we use lazy loading to . 
+- only this way we can make big application performant , optimized.
 
 
 

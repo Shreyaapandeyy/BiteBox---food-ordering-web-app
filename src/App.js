@@ -8,6 +8,8 @@ import About from "./components/About";
 import Contact from "./components/Contact";
 import Error from "./components/error";
 import RestaurantMenu from "./components/RestaurantMenu";
+import { Provider } from "react-redux";
+import appStore from "./utils/appStore";
 // const heading = React.createElement("h1",{id:"heading",xy:"abc"},"Hello world ");  // 3rd one -(hello world ) is basically children and it goes inside the h1 tag
 // // 2nd one - {id & and other things are the attributes }       both of the children and attributes are shown in the props in the broswer . props consist od=f children and attributes.
 // const root = ReactDOM.createRoot(document.getElementById("root"));
@@ -168,10 +170,12 @@ const Title = ()=>(
 
  const  AppLayout = () => {
          return (
+            <Provider store={appStore}>
             <div className="app">
                <Header />
                <Outlet/>
             </div>
+            </Provider>
          );      
  };
 
