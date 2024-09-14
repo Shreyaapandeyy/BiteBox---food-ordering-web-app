@@ -33,7 +33,9 @@ const Header = () =>{
              <li className="px-6">
                <Link to="/contact" className="header-link">Contact Us</Link>
             </li>
-             <li className="px-6 font-bold text-xl">Cart ({cartItems.length}  items)  </li>
+             <li className="px-6 font-bold text-xl">
+             <Link to="/cart" className="header-link">Cart ({cartItems.length}  items)</Link>   
+             </li>
              <button className="login px-6" onClick={()=>{
               btnName === "Login"? 
               setbtnName("Logout") :  //have used ternanry condition here to toggle bw login logout , can write using if else also.

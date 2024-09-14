@@ -10,6 +10,7 @@ import Error from "./components/error";
 import RestaurantMenu from "./components/RestaurantMenu";
 import { Provider } from "react-redux";
 import appStore from "./utils/appStore";
+import Cart from "./components/Cart";
 // const heading = React.createElement("h1",{id:"heading",xy:"abc"},"Hello world ");  // 3rd one -(hello world ) is basically children and it goes inside the h1 tag
 // // 2nd one - {id & and other things are the attributes }       both of the children and attributes are shown in the props in the broswer . props consist od=f children and attributes.
 // const root = ReactDOM.createRoot(document.getElementById("root"));
@@ -83,11 +84,11 @@ import appStore from "./utils/appStore";
 
 
          // react element
-const heading = (
-   <h1 className="head" >
-      react using jsx
-   </h1>
-);
+// const heading = (
+//    <h1 className="head" >
+//       react using jsx
+//    </h1>
+// );
 
 
   // react functional component
@@ -109,34 +110,34 @@ const heading = (
 //   const fn = () => true;   //if need to write in multiple lines then wrap it using ()
    
 
-const elem = <span>REact element</span>;
+// const elem = <span>REact element</span>;
 
 
-const title = (                        //react elem under react elem
-   <h1 className="head">                       
-      {elem}                         
-      react using jsx                    
-   </h1>
-);
+// const title = (                        //react elem under react elem
+//    <h1 className="head">                       
+//       {elem}                         
+//       react using jsx                    
+//    </h1>
+// );
 
 
-const HeadingComponent = () => (
-   <div id="container"> 
-     {title}
-      <h1 className="heading"> functional component
+// const HeadingComponent = () => (
+//    <div id="container"> 
+//      {title}
+//       <h1 className="heading"> functional component
 
-      </h1>
-   </div> 
-);
+//       </h1>
+//    </div> 
+// );
 
 
 // component compossition
 
-const Title = ()=>(
-   <h1>
-      react using jsx
-   </h1>
-);
+// const Title = ()=>(
+//    <h1>
+//       react using jsx
+//    </h1>
+// );
  
 
 // const Title =  function () {
@@ -200,7 +201,12 @@ const approuter = createBrowserRouter([
          {
          path: "/restaurants/:resId",
          element: <RestaurantMenu />,
-         },
+         }, 
+         {
+            path: "/cart",
+            element: <Cart/>,
+         }
+
       
       ],
       errorElement: <Error/>,
