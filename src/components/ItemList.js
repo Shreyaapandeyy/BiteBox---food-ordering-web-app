@@ -24,7 +24,7 @@ const ItemList = ({items}) =>{
 
                  <div className="w-3/12 p-4 ">
                  <div className="absolute mx-6  pt-28"> 
-                  <button className=" p-2   bg-slate-50 rounded-xl w-28 text-green-400 font-bold" onClick={()=>handleCart(item)}>Add </button>
+                  <button className=" p-2   bg-slate-50 rounded-xl w-28 text-green-400 font-bold hover:bg-slate-100" onClick={()=>handleCart(item)}>Add </button>
                   </div>
                   <img  className=""  src={CDN_URL +item.card.info.imageId }></img>
                   
