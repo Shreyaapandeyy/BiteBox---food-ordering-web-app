@@ -1,5 +1,4 @@
 import { useState } from "react";
-import { LOGO_URL } from "../utils/constants";
 import { Link } from "react-router-dom";
 import useOnlineStatus from "../utils/useOnlineStatus";
 import logo from "../assests/logo.jpg"

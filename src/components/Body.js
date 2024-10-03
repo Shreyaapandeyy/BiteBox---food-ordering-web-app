@@ -43,7 +43,9 @@
       <div className="body">
          <div className="filter flex">
          <div className="Search m-4 p-4">
-          <input type="text" className="search-box border border-solid border-black" value={searchText} onChange={(e)=>{                //binding it with the state variable{searchtext}
+          <input type="text" 
+          data-testid = "searchInput" //giving testid for jest testing for getting search input
+          className="search-box border border-solid border-black" value={searchText} onChange={(e)=>{                //binding it with the state variable{searchtext}
             setsearchText(e.target.value);      // whenever my input is changing we need to change the searchtext , as it is binded to input text.
           }} />
           <button className="search-btn px-2 py-2 m-4 bg-green-100 border rounded-lg" onClick={()=>{
