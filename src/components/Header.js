@@ -13,39 +13,38 @@ const Header = () =>{
    const cartItems = useSelector((store)=> store.cart.items);
 
     return (
-       <div className="heade flex justify-between bg-pink-100">
-          <div className="logo-container w-36">
-             <img  className="logo rounded-full mx-2 my-1" src= {logo} />
-          </div>
-          <div className="nav-items flex items-center">
-            <ul className=" flex  m-4 p-4">
-               <li className="px-6">
-                  Status :{onlineStatus 
-?" Online🟢":" Offline🔴"}
-               </li>
-             <li className="px-6">
-               <Link to="/" className="header-link"> Home</Link>
-               </li>
-             <li className="px-6">
-             <Link to="/about"  className="header-link">About Us</Link>
-             </li>
-             <li className="px-6">
-               <Link to="/contact" className="header-link">Contact Us</Link>
-            </li>
-             <li className="px-6 font-bold text-xl">
-             <Link to="/cart" className="header-link">Cart ({cartItems.length}  items)</Link>   
-             </li>
-             <button className="login px-6" onClick={()=>{
-              btnName === "Login"? 
-              setbtnName("Logout") :  //have used ternanry condition here to toggle bw login logout , can write using if else also.
-              setbtnName("Login");
-             }}
-             >{btnName} </button>   
+      <div className="header flex justify-between items-center bg-gradient-to-r from-pink-50 via-pink-200 to-pink-100 p-4">
+      {/* Logo Container */}
+      <div className="logo-container flex items-center">
+        <img className="logo w-32 h-20 rounded-full mr-3" src={logo} alt="logo" />
+        {/* <span className="text-xl font-bold text-gray-700">BITE BOX</span> */}
+      </div>
     
-            </ul> 
-          </div>   
+      {/* Navigation Items */}
+      <div className="nav-items flex items-center space-x-6 text-gray-800">
+        <span className="flex items-center px-4 py-2 rounded-lg bg-green-100 text-green-700 font-semibold">
+          Status: {onlineStatus ? "Online🟢" : "Offline🔴"}
+        </span>
+        <Link to="/" className="text-lg hover:text-pink-600 transition ">Home</Link>
+        <Link to="/about" className="text-lg hover:text-pink-600 transition">About Us</Link>
+        <Link to="/contact" className="text-lg hover:text-pink-600 transition">Contact Us</Link>
+        <Link to="/cart" className="text-lg font-semibold hover:text-pink-600 transition">
+          Cart ({cartItems.length} items)
+        </Link>
     
-       </div>
+        {/* Login Button */}
+        <button
+          className="px-4 py-2 bg-green-100 text-black font-semibold rounded-lg hover:bg-green-300 transition"
+          onClick={() => {
+            btnName === "Login" ? setbtnName("Logout") : setbtnName("Login");
+          }}
+        >
+          {btnName}
+        </button>
+      </div>
+    </div>
+    
+
     );
     
      };

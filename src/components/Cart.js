@@ -16,21 +16,41 @@ const Cart = () => {
     const handleRemove =(cartItems)=>{
         dispatch(removeItem(cartItems));
     }
-  return (
-    <div className="text-center m-4 p-4 ">
-       <h1 className="  font-bold text-xl">Cart</h1>
-       <div className="m-2 p-2 mx-auto">
-       <button className="m-4 px-2 py-2 border rounded-md bg-green-200 font-bold" onClick={handleClear}>Clear cart </button>
-       <button className="m-4 px-2 py-2 border rounded-md bg-green-100 font-bold" onClick={handleRemove}>remove items</button>
-       </div>
-        
+    return (
+      <div className="min-h-screen flex flex-col items-center justify-center p-6">
+  <div className="text-center bg-gradient-to-b from-pink-100 to-white p-8 rounded-2xl shadow-xl max-w-3xl w-full">
+      <h1 className="text-4xl font-bold text-gray-800 mb-6">Your Cart!</h1>
+      
+      <div className="w-11/12 lg:w-10/12 mx-auto">
+          {/* Clear Cart Button */}
+          <button
+              className="p-4 m-4 bg-gradient-to-r from-black to-gray-900 text-white rounded-xl font-semibold shadow-2xl hover:from-gray-900 hover:to-black transform hover:scale-105 transition-all duration-300 ease-in-out focus:outline-none focus:ring-4 focus:ring-blue-500 focus:ring-opacity-60 active:scale-95"
+              onClick={handleClear}    
+          >
+            
+            
+              {/* Trash icon from Material Icons */}
+              <span className="mr-3 text-xxl">🗑️</span>
+              Clear Cart
+          </button>
+          <button
+              className="p-4 m-4 bg-gradient-to-r from-black to-gray-900 text-white rounded-xl font-semibold shadow-2xl hover:from-gray-900 hover:to-black transform hover:scale-105 transition-all duration-300 ease-in-out focus:outline-none focus:ring-4 focus:ring-blue-500 focus:ring-opacity-60 active:scale-95"
+              onClick={handleRemove}    
+          >
+            <span className="mr-3 text-xxl">Remove Items</span>
+          </button>
 
-      <div className="w-6/12 mx-auto border">
-        <ItemList items={cartItems} />
+          
+          {/* Cart Content */}
+          {cartItems.length === 0 ? (
+              <h2 className="font-semibold text-xl text-gray-600">Your cart is empty. Add some items to get started!</h2>
+          ) : (
+              <ItemList items={cartItems} />
+          )}
       </div>
-
-     </div>
-  )
+  </div>
+</div>
+    );
 }
 
 export default Cart;

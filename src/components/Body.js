@@ -43,9 +43,9 @@
       <div className="body">
          <div className="filter flex">
          <div className="Search m-4 p-4">
-          <input type="text" 
+          <input type="text"  placeholder="Search for Restaurants..."
           data-testid = "searchInput" //giving testid for jest testing for getting search input
-          className="search-box border border-solid border-black" value={searchText} onChange={(e)=>{                //binding it with the state variable{searchtext}
+          className="search-box border border-solid border-black p-3 rounded-lg" value={searchText} onChange={(e)=>{                //binding it with the state variable{searchtext}
             setsearchText(e.target.value);      // whenever my input is changing we need to change the searchtext , as it is binded to input text.
           }} />
           <button className="search-btn px-2 py-2 m-4 bg-green-100 border rounded-lg" onClick={()=>{
@@ -72,7 +72,7 @@
          </div>
           
           
-         <div className="res-container flex flex-wrap justify-start mx-6">
+         <div className="res-container flex flex-wrap justify-center gap-2 md:gap-3 w-full mx-auto">
          {/* <RestaurantCard resData={resList[0]} />
          <RestaurantCard resData={resList[1]} /> */}
            {filteredRestaurants.map((restaurant) => (
